@@ -58,8 +58,4 @@ model_evaluation:
 
 
 
-  
-image_processing:
-  root_dir: artifacts/image_processing
-  data_dir: artifacts/data_ingestion/fabric_data
-  STATUS_FILE: artifacts/image_processing/status.txt
+ 
