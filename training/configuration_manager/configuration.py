@@ -64,26 +64,26 @@ class ConfigurationManager:
 
         return feature_engineering_config
     
+
     def get_cross_val_config(self) -> CrossValConfig:
         config = self.config.cross_val
         create_directories([config.root_dir])
-        create_directories([ config.random_search_models_rf, config.model_cache_rf])
-        create_directories([config.train_data_path, config.test_data_path])
-        create_directories([config.metric_file_name_rf, config.best_model_params_rf])
+        create_directories([config.final_train_data_path, config.final_test_data_path])
+        create_directories([ config.best_model_params])
 
         cross_val_config = CrossValConfig(
             root_dir = config.root_dir,
-            random_search_models_rf= config.random_search_models_rf,
-            model_cache_rf= config.model_cache_rf,
-            train_data_path = config.train_data_path,
-            test_data_path= config.test_data_path,
-            model_name = config.model_name,
-            STATUS_FILE= config.STATUS_FILE,
-            metric_file_name_rf= config.metric_file_name_rf,
-            best_model_params_rf= config.best_model_params_rf
+            data_dir= config.data_dir,
+            final_train_data_path = config.final_train_data_path,
+            final_test_data_path= config.final_test_data_path,
+            best_model_params= config.best_model_params,
+            STATUS_FILE= config.STATUS_FILE
         )
 
         return cross_val_config
+    
+
+        
     
 #6
     def get_model_trainer_config(self) -> ModelTrainerConfig :        
