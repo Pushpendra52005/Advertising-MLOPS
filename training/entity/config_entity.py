@@ -22,8 +22,8 @@ class DataValidationConfig:
 @dataclass(frozen=True)
 class FeatureEngineeringConfig:
     root_dir: Path
-    train_data_path: Path
-    test_data_path: Path
+    final_train_data_path: Path
+    final_test_data_path: Path
     STATUS_FILE: str
 #4
 @dataclass(frozen=True)
